@@ -1,0 +1,166 @@
+.container{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #090b13;
+    align-items: center;
+    padding: 0 36px;
+    overflow-x: hidden;
+}
+
+.logoimg{
+    width: 80px;
+}
+
+.NavMenu{
+    flex: 1;
+    display: flex;
+    margin-left: 25px;
+    align-items: center;
+}
+
+.NavMenu > a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+.NavMenu > a > img{
+    height: 20px;
+}
+
+.NavMenu > a > span{
+    font-size: 13px;
+    letter-spacing: 1.42px;
+    color: #fff;
+    position: relative;
+}
+
+.NavMenu > a >span::after{
+    content: "";
+    left: 0;
+    right: 0;
+    bottom:-6px;
+    transform-origin:center;
+    position:absolute;
+    background-color: #fff;
+    height: 2px;
+    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; 
+    transform: scaleX(0); 
+    opacity: 0;
+}
+
+.NavMenu > a > span:hover::after{
+    opacity: 1;
+    transform: scaleX(1); 
+}
+
+.userImageDiv{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.userImage{
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.menu-btns{
+    color:#fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+    margin:0 0 0 20px;
+}
+
+.menu-btns .bars-icon{
+    display: block;
+}
+
+.menu-btns .cross-icon{
+    display: none;
+}
+
+.search-Bar{
+    display: none;
+}
+
+input[type=text] {
+    padding: 12px 20px 12px 40px;
+    border: none;
+    background-color: white;
+    background-position: 5px 5px; 
+    background-repeat: no-repeat;
+    outline: none;
+    background-image: url('/public/images/search.png');
+}
+
+.search-Bar.active{
+    display: flex;
+}
+
+@media(max-width:1019px){
+
+    .menu-btns{
+        display: block;
+        color:#fff;
+        font-size: 23px;
+        cursor: pointer;
+        margin:0 0 0 800px;
+        z-index: 999;
+    }
+
+    .menu-btns .cross-icon{
+        color: red;
+    }
+    
+
+    .container .NavMenu{
+        position: fixed;
+        background: #090b13;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        right:0;
+        left:100%;
+        top: 0;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.9s ease;
+        z-index: 999;
+    }
+
+    .NavMenu.active{
+        left: 0;
+    }
+
+    .search-Bar.active{
+        display: flex;
+    }
+
+    .userImageDiv{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    
+}
+
+@media(max-width: 941px){
+    .menu-btns{
+        color:#fff;
+        font-size: 23px;
+        cursor: pointer;
+        margin:0 0 0 30px;
+    }
+   
+}
